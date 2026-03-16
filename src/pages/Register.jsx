@@ -41,7 +41,15 @@ function Register() {
       await register(email, password);
       navigate('/dashboard');
     } catch (error) {
-      setError(error.response?.data?.error || 'Registration failed. Please try again.');
+      const data = error.response?.data;
+      if (data?.error) {
+        setError(data.error);
+      } else if (data && typeof data === 'object') {
+        // validation errors come back as {field: message} pairs
+        setError(Object.values(data).join('. '));
+      } else {
+        setError('Registration failed. Please try again.');
+      }
     } finally {
       setSubmitting(false);
     }
