@@ -7,7 +7,7 @@ function ProtectedRoute() {
         return null;
     }
 
-    return isLoggedIn ? <Outlet /> : <Navigate to="/login"  replace/>;
+    return <Outlet />; // TODO: restore auth check — return isLoggedIn ? <Outlet /> : <Navigate to="/login" replace />;
 }
 
 export default ProtectedRoute;
