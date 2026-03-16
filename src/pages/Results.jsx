@@ -50,15 +50,6 @@ const FACTORS = [
     positiveLabel: 'Tilted toward conservative spenders.',
     negativeLabel: 'Tilted toward aggressive spenders.',
   },
-  {
-    field: 'alpha',
-    tStatField: 'alpha',
-    variable: 'α',
-    label: 'Alpha',
-    description: 'Return not explained by any of the five factors.',
-    positiveLabel: 'Outperformed the factor model.',
-    negativeLabel: 'Underperformed the factor model.',
-  },
 ];
 
 function formatDate(dateStr) {
